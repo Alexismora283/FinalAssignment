@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Assignment</title>
+</head>
+<body>
+
+  <script>
+    let numOfCourses = parseInt(prompt("How many courses did you finish?", "0"));
+
+    if (isNaN(numOfCourses) || numOfCourses <= 0) {
+      document.write("<p>Invalid Input!</p>");
+    } else {
+      let courseMarks = [];
+      let total = 0;
+
+      for (let i = 1; i <= numOfCourses; i++) {
+        let mark = parseFloat(prompt("Enter your mark for course " + i));
+        courseMarks.push(mark);
+        total += mark;
+      }
+
+      document.write("<h3>Course Marks:</h3>");
+      for (let i = 0; i < courseMarks.length; i++) {
+        document.write("<p>Course " + (i + 1) + " mark: " + courseMarks[i] + "</p>");
+      }
+
+      let average = total / courseMarks.length;
+      average = average.toFixed(2);
+
+      if (average >= 90 && average <= 100) {
+        document.write("<p>Your final average is " + average + ". Your grade is A+</p>");
+      } else if (average >= 80 && average < 90) {
+        document.write("<p>Your final average is " + average + ". Your grade is B</p>");
+      } else if (average >= 70 && average < 80) {
+        document.write("<p>Your final average is " + average + ". Your grade is C</p>");
+      } else if (average >= 60 && average < 70) {
+        document.write("<p>Your final average is " + average + ". Your grade is D</p>");
+      } else if (average < 60) {
+        document.write("<p>Your final average is " + average + ". Your grade is F</p>");
+      } else {
+        document.write("<p>Sorry, all the marks have to be from minimum 0 to maximum 100!</p>");
+      }
+    }
+  </script>
+
+</body>
+</html>
