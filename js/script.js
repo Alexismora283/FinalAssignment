@@ -1,4 +1,4 @@
-const jsonURL = 'https://alexismora283.github.io/json-data-books/';
+const jsonURL = 'https://alexismora283.github.io/json-data-books/data.json';
 const contentDiv = document.getElementById('content');
 
 fetch(jsonURL)
